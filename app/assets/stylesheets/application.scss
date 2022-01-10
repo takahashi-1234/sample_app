@@ -14,3 +14,25 @@
  *= require_self
  */
  @import 'bootstrap';
+
+.main_content{
+    display:flex;
+    justify-content:space-around;
+}
+
+.new_review{
+    width:35%;
+    padding:10px;
+}
+
+.review_index{
+    width:55%;
+    padding:10px;
+}
+.review_content{
+    display:flex;
+    border:solid 1px gray;
+    margin:10px 0;
+    border-radius:10px;
+    padding:10px;
+}
