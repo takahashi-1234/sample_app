@@ -2,10 +2,16 @@
   <div class="new_review bg-light">
     <h5>新規投稿</h5>
     <%= form_with model:@review,local:true do |f| %>
-      <%= f.label:題名 %>
+      <%= f.label:日本酒 %>
       <%= f.text_field:title,class:"form-control" %>
-      <%= f.label:本文 %>
+      <%= f.label:分類 %>
+      <%= f.select:sake_type,[["純米大吟醸","純米大吟醸"],["純米吟醸","純米吟醸"],["純米","純米"],["大吟醸","大吟醸"],["吟醸","吟醸"],["本醸造","本醸造"]],{},class:"form-control" %>
+      <%= f.label:製法 %>
+      <%= f.select:kind,[["2度火入れ","2度火入れ"],["生貯蔵","生貯蔵"],["生詰め","生詰め"],["生酒","生酒"],["原酒","原酒"],["生原酒","生原酒"]],{},class:"form-control" %>
+      <%= f.label:メモ %>
       <%= f.text_area:body,class:"form-control" %>
+      <%= f.label:タグ %>
+      <%= f.text_field:tag_name,class:"form-control",placeholder:"全角カンマ区切りで複数作成可能" %>
       <%= f.label:写真 %><br>
       <%= f.attachment_field :image %><br>
       <%= f.submit "投稿",class:"btn btn-primary" %>
@@ -14,15 +20,25 @@
   
   <div class="review_index bg-light">
     <h5>投稿一覧</h5>
+    <% @tag_list.each do |list| %>
+      <span class="tag_list"><%= list.tag_name %><%= list.reviews.count %></span>
+    <% end %>
     <% @reviews.each do |review| %>
       <div class="review_content">
         <div>
           <%= attachment_image_tag review,:image,size:'100x150',fallback:'ダウンロード.png' %>
         </div>
-        <div>
-          <%= review.customer.email %> <%= review.created_at.strftime('%F') %><br>
-          <%= review.title %><br>
-          <%= review.body %>
+        <div class="ml-4">
+          <div class="my-2"><span class="tag_head">記録日：</span><%= review.created_at.strftime('%F') %></div>
+          <div class="my-2"><span class="tag_head">日本酒：</span><%= review.title %>／<span class="tag_head">タイプ：</span><%= review.sake_type %>／<span class="tag_head">製法：</span><%= review.kind %></div>
+          <div class="my-2"><span class="tag_head">メモ：</span><%= review.body %></div>
+          <div class="my-2">
+            <span class="tag_head">タグ：</span>
+            <% review.tags.each do |tag| %>
+              <span class="tag_list"><%= tag.tag_name %></span>
+            <% end %>
+          </div>
+          <div class="my-2"><%= link_to "削除",review_path(review.id),method: :delete,"data-confirm"=>"本当に削除していいですか？",class:"btn btn-danger btn-sm" %></div>
         </div>
       </div>
     <% end %>

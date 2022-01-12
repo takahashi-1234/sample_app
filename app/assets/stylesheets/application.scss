@@ -18,13 +18,14 @@
 .main_content{
     display:flex;
     justify-content:space-around;
-    margin-top:20px;
+    margin:20px 0;
 }
 
 .new_review{
     width:35%;
     padding:20px;
     border-radius:5px;
+    height:600px;
 }
 
 .review_index{
@@ -38,6 +39,7 @@
     margin:10px 0;
     border-radius:10px;
     padding:10px;
+    font-size:small;
 }
 .question_box{
     width:80%;
@@ -79,4 +81,14 @@ body{
     margin-top:200px;
     color:white;
     text-align:center;
+}
+
+.tag_list{
+    padding:8px;
+    border-radius:10px;
+    background-color:#e6d2f0;
+}
+
+.tag_head{
+    font-weight:bold;
 }

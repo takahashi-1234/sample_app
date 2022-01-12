@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_10_020349) do
+ActiveRecord::Schema.define(version: 2022_01_12_220648) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -55,6 +55,9 @@ ActiveRecord::Schema.define(version: 2022_01_10_020349) do
     t.integer "customer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "type"
+    t.string "kind"
+    t.string "sake_type"
   end
 
   create_table "rviews", force: :cascade do |t|
@@ -62,6 +65,19 @@ ActiveRecord::Schema.define(version: 2022_01_10_020349) do
     t.string "body"
     t.string "image_id"
     t.integer "customer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tag_maps", force: :cascade do |t|
+    t.integer "review_id"
+    t.integer "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "tag_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
