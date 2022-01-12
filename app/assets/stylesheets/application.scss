@@ -18,16 +18,19 @@
 .main_content{
     display:flex;
     justify-content:space-around;
+    margin-top:20px;
 }
 
 .new_review{
     width:35%;
-    padding:10px;
+    padding:20px;
+    border-radius:5px;
 }
 
 .review_index{
     width:55%;
-    padding:10px;
+    padding:20px;
+    border-radius:5px;
 }
 .review_content{
     display:flex;
@@ -45,5 +48,35 @@
 }
 
 #nav_icon{
-    margin-left:100px;
+    margin:0 auto;
+}
+
+body{
+    background-color:#E7E1D7;
+}
+
+.nav-menu{
+    border-top:5px solid black;
+    text-align:center;
+    height:80px;
+    line-height:80px;
+}
+
+.nav_content{
+    border-left:2px solid black;
+    padding:0 5px;
+    margin:0 10px;
+}
+
+.top{
+    background-image:url(top.jpeg);
+    background-size:cover;
+    background-position:center;
+    height:600px;
+    overflow:hidden;
+}
+.top_content{
+    margin-top:200px;
+    color:white;
+    text-align:center;
 }

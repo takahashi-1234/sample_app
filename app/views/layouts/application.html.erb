@@ -11,21 +11,14 @@
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-      <a class="navbar-brand" href="#" id="nav_icon"><%= image_tag "sake.png",:size =>"100x80" %></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item mr-5">
-            <p class="nav-link">Home</p>
-          </li>
-          <li class="nav-item mr-5">
-            <p class="nav-link">問題</p>
-          </li>
-        </ul>
-      </div>
+      <a class="navbar-brand" href="#" id="nav_icon"><%= image_tag "sake-reco.png",:size =>"100x80" %></a>
     </nav>
+    <div class="nav-menu bg-light">
+      <%= link_to "記録",reviews_path,class:"nav_content" %>
+      <%= link_to "日本酒問題",question_path,class:"nav_content" %>
+      <%= link_to "sake-recordについて",root_path,class:"nav_content" %>
+      <%= link_to "ホーム",root_path,class:"nav_content" %>
+    </div>
     <%= yield %>
   </body>
 </html>

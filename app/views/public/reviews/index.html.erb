@@ -1,6 +1,6 @@
 <div class="main_content">
-  <div class="new_review">
-    <h1>新規投稿</h1>
+  <div class="new_review bg-light">
+    <h5>新規投稿</h5>
     <%= form_with model:@review,local:true do |f| %>
       <%= f.label:題名 %>
       <%= f.text_field:title,class:"form-control" %>
@@ -12,8 +12,8 @@
     <% end %>
   </div>
   
-  <div class="review_index">
-    <h1>投稿一覧</h1>
+  <div class="review_index bg-light">
+    <h5>投稿一覧</h5>
     <% @reviews.each do |review| %>
       <div class="review_content">
         <div>
