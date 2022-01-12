@@ -1,0 +1,58 @@
+<div class="question_box">
+  <h1>問題</h1>
+  <div class="question_content">
+    <%= form_with model:@question,url:'result',local:true do |f| %>
+      <h4>第1問</h4>
+        <p>日本酒の説明として正しいものはどれか。</p>
+        <%= f.radio_button:answer1,1 %>
+        <%= f.label:asnwer1,"米と麹と水を主な原料とする清酒" %><br>
+        <%= f.radio_button:answer1,2 %>
+        <%= f.label:asnwer1,"米と穀類と水を主な原料とする清酒" %><br>
+        <%= f.radio_button:answer1,3 %>
+        <%= f.label:asnwer1,"芋と麹と水を主な原料とする清酒"%><br>
+        <%= f.radio_button:answer1,4 %>
+        <%= f.label:asnwer1,"麦と麹と水を主な原料とする清酒" %><br>
+      <h4>第2問</h4>
+        <p>日本酒にアルコールを添加する目的として正しいものはどれか。</p>
+        <%= f.radio_button:answer2,1 %>
+        <%= f.label:asnwer2,"香気成分を引き出すこと" %><br>
+        <%= f.radio_button:answer2,2 %>
+        <%= f.label:asnwer2,"アルコール度数を上げること" %><br>
+        <%= f.radio_button:answer2,3 %>
+        <%= f.label:asnwer2,"味わいを淡麗化させること" %><br>
+        <%= f.radio_button:answer2,4 %>
+        <%= f.label:asnwer2,"お米の味を引き立てること" %><br>
+      <h4>第3問</h4>
+        <p>日本酒の保存管理において、適切なものはどれか。</p>
+        <%= f.radio_button:answer3,1 %>
+        <%= f.label:asnwer3,"匂いの強い食品類と一緒に保管すること" %><br>
+        <%= f.radio_button:answer3,2 %>
+        <%= f.label:asnwer3,"紫外線を遮断すること" %><br>
+        <%= f.radio_button:answer3,3 %>
+        <%= f.label:asnwer3,"保管場所を高湿度に保つこと" %><br>
+        <%= f.radio_button:answer3,4 %>
+        <%= f.label:asnwer3,"蓋を開けっ放しにすること" %><br>
+      <h4>第4問</h4>
+        <p>特定名称酒の特定名称と分類基準の組合せとして正しいものはどれか。</p>
+        <%= f.radio_button:answer4,1 %>
+        <%= f.label:asnwer4,"純米大吟醸酒：［原料］米と米麹のみ、［精米歩合］50%以下" %><br>
+        <%= f.radio_button:answer4,2 %>
+        <%= f.label:asnwer4,"純米酒：　　　［原料］米と米麹のみ、［精米歩合］70%以下" %><br>
+        <%= f.radio_button:answer4,3 %>
+        <%= f.label:asnwer4,"吟醸酒：　　　［原料］米と米麹のみ、［精米歩合］60%以下" %><br>
+        <%= f.radio_button:answer4,4 %>
+        <%= f.label:asnwer4,"特別本醸造酒：［原料］米と米麹と規定量内の醸造アルコール、［精米歩合］70%以下" %><br>
+      <h4>第5問</h4>
+        <p>日本酒製造の工程として正しいものはどれか。</p>
+        <%= f.radio_button:answer5,1 %>
+        <%= f.label:asnwer5,"精米 → 放冷 → 洗米 → 浸漬 → 蒸し → 枯らし" %><br>
+        <%= f.radio_button:answer5,2 %>
+        <%= f.label:asnwer5,"洗米 → 精米 → 放冷 → 浸漬 → 蒸し → 枯らし" %><br>
+        <%= f.radio_button:answer5,3 %>
+        <%= f.label:asnwer5,"洗米 → 枯らし → 精米 → 浸漬 → 蒸し → 放冷" %><br>
+        <%= f.radio_button:answer5,4 %>
+        <%= f.label:asnwer5,"精米 → 枯らし → 洗米 → 浸漬 → 蒸し → 放冷" %><br>
+      <%= f.submit "回答する" %>
+    <%end %>
+  </div>
+</div>
