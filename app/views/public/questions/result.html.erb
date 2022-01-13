@@ -1,8 +1,10 @@
-<% if @question.score<=20 %>
-  <p>残念</p>
-<% elsif @question.score>=30 && @question.score<=60 %>
-  <p>よくできました！</p>
-<% else %>
-  <p>素晴らしい！</p>
-<% end %>
-<p>あなたの得点は<%= @question.score %>点です</p>
+<div class="result bg-light">  
+  <% if @question.score<=20 %>
+    <h1 class="text-primary">残念</h1>
+  <% elsif @question.score>=30 && @question.score<=60 %>
+    <h1 class="text-success">よくできました！</h1>
+  <% else %>
+    <h1 class="text-danger">素晴らしい！</h1>
+  <% end %>
+  <h2>あなたの得点は<span class="font-weight-bold"><%= @question.score %></span>点です</h2>
+</div>

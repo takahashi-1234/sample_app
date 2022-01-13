@@ -18,7 +18,7 @@ class Public::ReviewsController < ApplicationController
       redirect_back(fallback_location:root_path)
     end
   end
-  
+
   def destroy
     review=Review.find(params[:id])
     review.destroy

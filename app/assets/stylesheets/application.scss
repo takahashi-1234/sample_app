@@ -42,8 +42,9 @@
     font-size:small;
 }
 .question_box{
-    width:80%;
-    margin:0 auto;
+    width:70%;
+    margin:20px auto;
+    padding:10px;
 }
 .question_content{
     margin-left:50px;
@@ -91,4 +92,11 @@ body{
 
 .tag_head{
     font-weight:bold;
+}
+
+.result{
+    padding:50px 20px;
+    width:50%;
+    margin:30px auto 0;
+    text-align:center;
 }

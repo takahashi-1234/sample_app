@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   scope module: :public do
     root to:'homes#top'
     resources:reviews,only:[:index,:create,:destroy]
-    get '/question'=>'questions#show',as:'question'
-    post '/result'=>'questions#result',as:'result'
+    resources:tags,only:[:show]
+    get 'question'=>'questions#show',as:'question'
+    post 'result'=>'questions#result',as:'result'
   end
 end

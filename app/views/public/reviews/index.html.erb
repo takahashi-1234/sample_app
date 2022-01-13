@@ -21,7 +21,7 @@
   <div class="review_index bg-light">
     <h5>投稿一覧</h5>
     <% @tag_list.each do |list| %>
-      <span class="tag_list"><%= list.tag_name %><%= list.reviews.count %></span>
+      <span class="tag_list"><%= link_to list.tag_name,tag_path(list.id) %><%= list.reviews.count %></span>
     <% end %>
     <% @reviews.each do |review| %>
       <div class="review_content">

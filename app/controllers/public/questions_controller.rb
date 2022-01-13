@@ -1,4 +1,5 @@
 class Public::QuestionsController < ApplicationController
+protect_from_forgery with: :null_session
   def show
     @question=Question.new
   end
