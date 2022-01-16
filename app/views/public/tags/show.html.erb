@@ -1,5 +1,8 @@
- <h5>投稿一覧</h5>
-      <span class="tag_list"><%= @tag.tag_name %><%= @tag.reviews.count %></span>
+ <div class="main_content">
+  <%= render "public/reviews/new", review:@review %>
+  <div class="review_index bg-light">
+    <h5>投稿一覧<%= link_to "戻る",reviews_path %></h5>
+    <span class="tag_list"><%= @tag.tag_name %><%= @tag.reviews.count %></span>
     <% @tag.reviews.each do |review| %>
       <div class="review_content">
         <div>
@@ -19,3 +22,5 @@
         </div>
       </div>
     <% end %>
+  </div>
+</div>

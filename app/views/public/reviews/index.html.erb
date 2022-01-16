@@ -1,23 +1,5 @@
 <div class="main_content">
-  <div class="new_review bg-light">
-    <h5>新規投稿</h5>
-    <%= form_with model:@review,local:true do |f| %>
-      <%= f.label:日本酒 %>
-      <%= f.text_field:title,class:"form-control" %>
-      <%= f.label:分類 %>
-      <%= f.select:sake_type,[["純米大吟醸","純米大吟醸"],["純米吟醸","純米吟醸"],["純米","純米"],["大吟醸","大吟醸"],["吟醸","吟醸"],["本醸造","本醸造"]],{},class:"form-control" %>
-      <%= f.label:製法 %>
-      <%= f.select:kind,[["2度火入れ","2度火入れ"],["生貯蔵","生貯蔵"],["生詰め","生詰め"],["生酒","生酒"],["原酒","原酒"],["生原酒","生原酒"]],{},class:"form-control" %>
-      <%= f.label:メモ %>
-      <%= f.text_area:body,class:"form-control" %>
-      <%= f.label:タグ %>
-      <%= f.text_field:tag_name,class:"form-control",placeholder:"全角カンマ区切りで複数作成可能" %>
-      <%= f.label:写真 %><br>
-      <%= f.attachment_field :image %><br>
-      <%= f.submit "投稿",class:"btn btn-primary" %>
-    <% end %>
-  </div>
-  
+  <%= render "public/reviews/new", review:@review %>
   <div class="review_index bg-light">
     <h5>投稿一覧</h5>
     <% @tag_list.each do |list| %>
