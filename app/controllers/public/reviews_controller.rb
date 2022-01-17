@@ -1,6 +1,6 @@
 class Public::ReviewsController < ApplicationController
   def index
-    @reviews=Review.all
+    @reviews=Review.page(params[:page])
     @review=Review.new
     @tag_list=Tag.all
   end

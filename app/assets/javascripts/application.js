@@ -18,6 +18,7 @@
 //= require turbolinks
 //= require_tree .
 
+
 $(function(){
   $(".review_tab").click(function(){
     $(".review_tab").removeClass("tab_active");
