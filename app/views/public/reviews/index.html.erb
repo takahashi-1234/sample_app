@@ -1,28 +1,45 @@
 <div class="main_content">
   <%= render "public/reviews/new", review:@review %>
   <div class="review_index bg-light">
-    <h5>投稿一覧</h5>
+    <span>表示方法:</span>
+    <span type="button" class="review_tab tab_active">標準表示</span>/
+    <span type="button" class="review_tab">写真のみ</span>
+    <h5 class="my-2">投稿一覧</h5>
     <% @tag_list.each do |list| %>
       <span class="tag_list"><%= link_to list.tag_name,tag_path(list.id) %><%= list.reviews.count %></span>
     <% end %>
-    <% @reviews.each do |review| %>
-      <div class="review_content">
-        <div>
-          <%= attachment_image_tag review,:image,size:'100x150',fallback:'ダウンロード.png' %>
-        </div>
-        <div class="ml-4">
-          <div class="my-2"><span class="tag_head">記録日：</span><%= review.created_at.strftime('%F') %></div>
-          <div class="my-2"><span class="tag_head">日本酒：</span><%= review.title %>／<span class="tag_head">タイプ：</span><%= review.sake_type %>／<span class="tag_head">製法：</span><%= review.kind %></div>
-          <div class="my-2"><span class="tag_head">メモ：</span><%= review.body %></div>
-          <div class="my-2">
-            <span class="tag_head">タグ：</span>
-            <% review.tags.each do |tag| %>
-              <span class="tag_list"><%= tag.tag_name %></span>
-            <% end %>
+
+    <div class="review_box  box_active">
+      <% @reviews.each do |review| %>
+        <div class="review_content">
+          <div>
+            <%= attachment_image_tag review,:image,size:'100x160',fallback:'ダウンロード.png' %>
           </div>
-          <div class="my-2"><%= link_to "削除",review_path(review.id),method: :delete,"data-confirm"=>"本当に削除していいですか？",class:"btn btn-danger btn-sm" %></div>
+          <div class="ml-4">
+            <div class="my-2"><span class="tag_head">記録日：</span><%= review.created_at.strftime('%F') %></div>
+            <div class="my-2"><span class="tag_head">日本酒：</span><%= review.title %>／<span class="tag_head">タイプ：</span><%= review.sake_type %>／<span class="tag_head">製法：</span><%= review.kind %></div>
+            <div class="my-2"><span class="tag_head">メモ：</span><%= review.body %></div>
+            <div class="my-2">
+              <span class="tag_head">タグ：</span>
+              <% review.tags.each do |tag| %>
+                <span class="tag_list"><%= tag.tag_name %></span>
+              <% end %>
+            </div>
+            <div class="my-2"><%= link_to "削除",review_path(review.id),method: :delete,"data-confirm"=>"本当に削除していいですか？",class:"btn btn-danger btn-sm" %></div>
+          </div>
         </div>
+      <% end %>
+    </div>
+    
+    <div class="review_box">
+      <div class="style_box">
+        <% @reviews.each do |review| %>
+          <div class="review_content_box">
+            <%= attachment_image_tag review,:image,size:'100x160',fallback:'ダウンロード.png' %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
+    
   </div>
 </div>
