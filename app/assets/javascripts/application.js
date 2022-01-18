@@ -19,7 +19,16 @@
 //= require_tree .
 
 
-$(function(){
+$(document).on('turbolinks:load',function(){
+  $("#openmodal").click(function(){
+    $("#modalarea").fadeIn();
+  });
+  $("#modalbg").click(function(){
+    $("#modalarea").fadeOut();
+  });
+});
+
+$(document).on('turbolinks:load',function(){
   $(".review_tab").click(function(){
     $(".review_tab").removeClass("tab_active");
     $(this).addClass("tab_active");

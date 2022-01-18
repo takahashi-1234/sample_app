@@ -1,5 +1,5 @@
 <div class="question_box bg-light">
-  <h1>問題</h1>
+  <h1 id="openmodal">問題</h1>
   <div class="question_content">
     <%= form_with model:@question,url:'result',local:true do |f| %>
       <h4>第1問</h4>
@@ -54,5 +54,15 @@
         <%= f.label:asnwer5,"精米 → 枯らし → 洗米 → 浸漬 → 蒸し → 放冷" %><br>
       <%= f.submit "回答する" %>
     <%end %>
+  </div>
+</div>
+
+<div id="modalarea">
+  <div id="modalbg">
+    <div class="modalwrapper">
+      <div class="modalcontent">
+        <h1>日本酒の基礎知識を学べます</h1>
+      </div>
+    </div>
   </div>
 </div>
